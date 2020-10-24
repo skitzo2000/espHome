@@ -8,6 +8,6 @@ ENV LC_ALL en_US.UTF-8
 ARG CACHEBUST=1
 ENV ESPHOME_DASHBOARD_USE_PING="true"
 RUN pip3 install impacket --upgrade --user
-RUN pip3 install esphome
+RUN pip3 install --pre -U esphome
 RUN python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/develop/scripts/get-platformio.py)"
 CMD esphome /config dashboard --password $password
